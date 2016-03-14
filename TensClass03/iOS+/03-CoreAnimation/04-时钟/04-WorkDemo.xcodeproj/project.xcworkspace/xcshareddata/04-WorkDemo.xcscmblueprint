@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5bdaf67c-9e6a-964b-9048-9ee0332770fd++5758",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "5bdaf67c-9e6a-964b-9048-9ee0332770fd++5758" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5bdaf67c-9e6a-964b-9048-9ee0332770fd++5758" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4E3FD6FF-DCB5-482B-AC6B-2ADF99F7E1F2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5bdaf67c-9e6a-964b-9048-9ee0332770fd++5758" : "TensClass03(New)\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "04-WorkDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iOS+\/03-CoreAnimation\/04-WorkDemo\/04-WorkDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.10",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5bdaf67c-9e6a-964b-9048-9ee0332770fd++5758"
+    }
+  ]
+}

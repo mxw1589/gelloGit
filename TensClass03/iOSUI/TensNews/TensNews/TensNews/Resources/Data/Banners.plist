@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>linkURLString</key>
+		<string>http://e.cn.miaozhen.com/r/k=2006285&amp;p=6tGDM&amp;ro=sm&amp;dx=0&amp;rt=2&amp;ns=__IP__&amp;ni=__IESID__&amp;v=__LOC__&amp;o=http://m.chevrolet.com.cn/act/sail/amt?utm_source=163&amp;utm_medium=HS201503201_MOB8-10_584992&amp;utm_content=SGMMRK2015000058&amp;utm_campaign=SP-CH1500391_584992</string>
+		<key>imageURLString</key>
+		<string>http://img1.126.net/channel6/2015/019283/1080624_0518.jpg</string>
+		<key>title</key>
+		<string>赛欧3AMT智能换挡实体验</string>
+	</dict>
+	<dict>
+		<key>linkURLString</key>
+		<string>http://rd.da.netease.com/redirect?t=IRKZRj&amp;p=qwt4mq&amp;proId=1024&amp;target=http%3A%2F%2Fm.kaola.com%2Factivity%2Fh5%2F3398.html</string>
+		<key>imageURLString</key>
+		<string>http://img1.126.net/channel4/other/kaola1080624_0520a.jpg</string>
+		<key>title</key>
+		<string>考拉海购520 壕网易亏本狂欢</string>
+	</dict>
+	<dict>
+		<key>linkURLString</key>
+		<string>http://3g.163.com/ntes/15/0520/11/AQ2A71OG0096400N.html</string>
+		<key>imageURLString</key>
+		<string>http://img1.126.net/channel4/019828/adui270202_0521.jpg</string>
+		<key>title</key>
+		<string>奥迪感恩300万车主</string>
+	</dict>
+	<dict>
+		<key>linkURLString</key>
+		<string>http://3g.163.com/ntes/15/0519/11/APVOVSBM0096400N.html</string>
+		<key>imageURLString</key>
+		<string>http://img1.126.net/channel6/2015/019803/270202_0519.jpg</string>
+		<key>title</key>
+		<string>518，热门保险低至5折！</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dial" translatesAutoresizingMaskIntoConstraints="NO" id="l1d-kB-Kcf">
+                                <rect key="frame" x="5" y="129" width="311" height="311"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourHand" translatesAutoresizingMaskIntoConstraints="NO" id="q5K-Lb-kHo">
+                                <rect key="frame" x="147" y="224" width="27" height="120"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minuteHand" translatesAutoresizingMaskIntoConstraints="NO" id="6vW-zc-Qsu">
+                                <rect key="frame" x="150" y="220" width="21" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="secondHand" translatesAutoresizingMaskIntoConstraints="NO" id="pIL-b1-aop">
+                                <rect key="frame" x="156" y="205" width="9" height="159"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pIL-b1-aop" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NgG-AT-TC6"/>
+                            <constraint firstItem="q5K-Lb-kHo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="akd-nY-whA"/>
+                            <constraint firstItem="l1d-kB-Kcf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cNV-3r-lbV"/>
+                            <constraint firstItem="l1d-kB-Kcf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nUS-uA-Cok"/>
+                            <constraint firstItem="6vW-zc-Qsu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pIZ-kg-6eX"/>
+                            <constraint firstItem="q5K-Lb-kHo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qOQ-CY-kMe"/>
+                            <constraint firstItem="pIL-b1-aop" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sB6-qR-Ndx"/>
+                            <constraint firstItem="6vW-zc-Qsu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sgW-TU-Cxv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hourImageView" destination="q5K-Lb-kHo" id="PTd-ZI-zjI"/>
+                        <outlet property="minuteImageView" destination="6vW-zc-Qsu" id="iVi-Ku-dJo"/>
+                        <outlet property="secondImageView" destination="pIL-b1-aop" id="2cx-hL-x99"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="161" y="213"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dial" width="311" height="311"/>
+        <image name="hourHand" width="27" height="120"/>
+        <image name="minuteHand" width="21" height="128"/>
+        <image name="secondHand" width="9" height="159"/>
+    </resources>
+</document>

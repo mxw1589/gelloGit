@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qO4-l7-Lj5">
+                                <rect key="frame" x="155" y="124" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qO4-l7-Lj5" secondAttribute="trailing" id="5Uf-As-1Z8"/>
+                            <constraint firstItem="qO4-l7-Lj5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JYz-yu-qJt"/>
+                            <constraint firstItem="qO4-l7-Lj5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="R21-OL-O9T"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qO4-l7-Lj5" secondAttribute="bottom" id="Zhl-2x-NSG"/>
+                            <constraint firstItem="qO4-l7-Lj5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZzI-uc-uWG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qO4-l7-Lj5" secondAttribute="bottom" id="dGG-L9-arf"/>
+                            <constraint firstAttribute="trailing" secondItem="qO4-l7-Lj5" secondAttribute="trailing" id="ieU-Sc-YqI"/>
+                            <constraint firstItem="qO4-l7-Lj5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nVs-QL-zSx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Uf-As-1Z8"/>
+                                <exclude reference="JYz-yu-qJt"/>
+                                <exclude reference="R21-OL-O9T"/>
+                                <exclude reference="ZzI-uc-uWG"/>
+                                <exclude reference="ieU-Sc-YqI"/>
+                                <exclude reference="nVs-QL-zSx"/>
+                                <exclude reference="Zhl-2x-NSG"/>
+                                <exclude reference="dGG-L9-arf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="JYz-yu-qJt"/>
+                                <include reference="R21-OL-O9T"/>
+                                <include reference="ieU-Sc-YqI"/>
+                                <include reference="Zhl-2x-NSG"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="5Uf-As-1Z8"/>
+                                <include reference="ZzI-uc-uWG"/>
+                                <include reference="nVs-QL-zSx"/>
+                                <include reference="dGG-L9-arf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="songImageView" destination="qO4-l7-Lj5" id="yRG-f1-tof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

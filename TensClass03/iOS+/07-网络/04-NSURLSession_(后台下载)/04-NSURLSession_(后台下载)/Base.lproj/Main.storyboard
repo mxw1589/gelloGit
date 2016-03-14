@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEH-hP-FYw">
+                                <rect key="frame" x="0.0" y="555" width="298" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="jca-9m-qrS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="下载">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t16-Ic-5YL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-ll-fgh">
+                                <rect key="frame" x="303" y="555" width="297" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="uSx-QT-1tH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="暂停">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ymh-Zj-wVi"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuJ-9F-TWD" customClass="DrawDownLoadView">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="OgP-KQ-s4O"/>
+                                    <constraint firstAttribute="width" constant="150" id="rrk-Rn-9pd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cSj-ll-fgh" secondAttribute="trailing" id="Mgw-r4-TMV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cSj-ll-fgh" secondAttribute="bottom" id="aZn-qO-tki"/>
+                            <constraint firstItem="cSj-ll-fgh" firstAttribute="width" secondItem="wEH-hP-FYw" secondAttribute="width" id="cjW-mC-wZU"/>
+                            <constraint firstItem="cSj-ll-fgh" firstAttribute="leading" secondItem="wEH-hP-FYw" secondAttribute="trailing" constant="5" id="jzh-D7-Oq9"/>
+                            <constraint firstItem="wEH-hP-FYw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pmB-J8-Bau"/>
+                            <constraint firstItem="cuJ-9F-TWD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q3M-8P-wYb"/>
+                            <constraint firstItem="cuJ-9F-TWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rh2-mt-Sn8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wEH-hP-FYw" secondAttribute="bottom" id="t2b-CZ-uNr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="cuJ-9F-TWD" id="8Ij-Vu-BNS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="298"/>
+        </scene>
+    </scenes>
+</document>

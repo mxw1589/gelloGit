@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Max" representedClassName="Max" syncable="YES">
+        <attribute name="maxid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="maxname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="min" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Min" syncable="YES"/>
+    </entity>
+    <entity name="Min" representedClassName="Min" syncable="YES">
+        <attribute name="minid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="max" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Max" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Max" positionX="-45" positionY="0" width="128" height="90"/>
+        <element name="Min" positionX="-18" positionY="45" width="128" height="90"/>
+    </elements>
+</model>

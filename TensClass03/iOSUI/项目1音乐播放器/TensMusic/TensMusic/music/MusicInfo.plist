@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>默</string>
+		<key>imageName</key>
+		<string>mo</string>
+		<key>actor</key>
+		<string>那英</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>菊花爆满山</string>
+		<key>imageName</key>
+		<string>juhua</string>
+		<key>actor</key>
+		<string>马博</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>海阔天空</string>
+		<key>imageName</key>
+		<string>hai</string>
+		<key>actor</key>
+		<string>Beyond</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>浮夸</string>
+		<key>imageName</key>
+		<string>hu</string>
+		<key>actor</key>
+		<string>陈亦讯</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>山丘</string>
+		<key>imageName</key>
+		<string>shan</string>
+		<key>actor</key>
+		<string>李宗盛</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Skipalong</string>
+		<key>imageName</key>
+		<string>le</string>
+		<key>actor</key>
+		<string>L&apos;en&apos;ka</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Shake It Off</string>
+		<key>imageName</key>
+		<string>shake</string>
+		<key>actor</key>
+		<string>L&apos;isrer</string>
+	</dict>
+</array>
+</plist>

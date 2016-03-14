@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)http://superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/ -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>iOS开发证书"此证书的签发者无效"解决方法 | 皮卡丘♪～(´ε｀　)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS开发证书" 此证书的签发者无效"解决方法"="">
+<meta property="og:url" content="superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/index.html">
+<meta property="og:site_name" content="皮卡丘♪～(´ε｀　)">
+<meta property="og:description" content="前言哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/81f8a509gw1f100tg3i59j20eg01lq36.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/81f8a509gw1f100ti4ritj20jx05sgmo.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/81f8a509gw1f100tfcdg9j21740gsjv4.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/81f8a509gw1f100tau6guj20ud0c476j.jpg">
+<meta property="og:updated_time" content="2016-02-17T05:37:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS开发证书" 此证书的签发者无效"解决方法"="">
+<meta name="twitter:description" content="前言哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。">
+  
+    <link rel="alternative" href="http://superdanny.link/atom.xml" title="皮卡丘♪～(´ε｀　)" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://ww4.sinaimg.cn/mw690/81f8a509gw1evdv8eqqmmj20xc0xbjsf.jpg">
+  
+  <link rel="stylesheet" href="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/style.css" type="text/css">
+  <script async="" src="http://s.swiftypecdn.com/install/v2/st.js"></script><script src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/hm.js"></script><script src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/jquery.js"></script>
+  
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1983dc329569e6a5cbd9f78122646790";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Analytics -->
+
+<script type="text/javascript" async="" src="http://superdanny.disqus.com/embed.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/pc.js" src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/pc.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/fancybox/jquery.fancybox.js" src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/jquery.fancybox.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/js/jquery.lazyload.js" src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/jquery.lazyload.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.fancybox-margin{margin-right:10px;}</style></head>
+
+<body style="zoom: 1;"><div id="MathJax_Message" style="display: none;"></div>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay">
+
+	
+		<form class="search" action="http://superdanny.link/search/index.html" method="get" accept-charset="utf-8">
+			<label>Search</label>
+			<input type="text" id="search" class="st-default-search-input" maxlength="30" placeholder="站内搜索" autocomplete="off" autocorrect="off" autocapitalize="off">
+		</form>
+	
+
+</div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="http://superdanny.link/" class="profilepic">
+			
+			<img lazy-src="http://ww1.sinaimg.cn/mw690/81f8a509gw1evdwqs4q4cj20xc0xbjyw.jpg" class="js-avatar show" src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1evdwqs4q4cj20xc0xbjyw.jpg">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="http://superdanny.link/">SuperDanny</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一个不知天高地厚的小屁孩</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://superdanny.link/">主页</a></li>
+				        
+							<li><a href="http://superdanny.link/archives">所有文章</a></li>
+				        
+							<li><a href="http://superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF">移动端</a></li>
+				        
+							<li><a href="http://superdanny.link/categories/Mac%E7%AB%AF">Mac端</a></li>
+				        
+							<li><a href="http://superdanny.link/2015/07/21/About-me">简历</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/SuperDannyBoy" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/lovejameslvforever" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://superdanny.link/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto:boy736809040@gamil.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="http://superdanny.link/tags/AppStore/" style="font-size: 12px;" class="color4">AppStore</a> <a href="http://superdanny.link/tags/Apple-Pay/" style="font-size: 12px;" class="color5">Apple Pay</a> <a href="http://superdanny.link/tags/BUG/" style="font-size: 12px;" class="color4">BUG</a> <a href="http://superdanny.link/tags/CocoaPods/" style="font-size: 12px;" class="color5">CocoaPods</a> <a href="http://superdanny.link/tags/DIY/" style="font-size: 12px;" class="color4">DIY</a> <a href="http://superdanny.link/tags/GCD/" style="font-size: 12px;" class="color4">GCD</a> <a href="http://superdanny.link/tags/GitHub/" style="font-size: 12px;" class="color2">GitHub</a> <a href="http://superdanny.link/tags/Homebrew/" style="font-size: 12px;" class="color4">Homebrew</a> <a href="http://superdanny.link/tags/In-House/" style="font-size: 12px;" class="color4">In-House</a> <a href="http://superdanny.link/tags/KVC/" style="font-size: 12px;" class="color4">KVC</a> <a href="http://superdanny.link/tags/KVO/" style="font-size: 12px;" class="color4">KVO</a> <a href="http://superdanny.link/tags/Mac/" style="font-size: 12px;" class="color4">Mac</a> <a href="http://superdanny.link/tags/SVN/" style="font-size: 12px;" class="color4">SVN</a> <a href="http://superdanny.link/tags/Shell/" style="font-size: 12px;" class="color1">Shell</a> <a href="http://superdanny.link/tags/Swift/" style="font-size: 12px;" class="color1">Swift</a> <a href="http://superdanny.link/tags/UIKeyboardType/" style="font-size: 12px;" class="color5">UIKeyboardType</a> <a href="http://superdanny.link/tags/Xcode/" style="font-size: 12px;" class="color1">Xcode</a> <a href="http://superdanny.link/tags/brew/" style="font-size: 12px;" class="color5">brew</a> <a href="http://superdanny.link/tags/iOS/" style="font-size: 12px;" class="color4">iOS</a> <a href="http://superdanny.link/tags/iOS9/" style="font-size: 12px;" class="color5">iOS9</a> <a href="http://superdanny.link/tags/iTunes-Connect/" style="font-size: 12px;" class="color5">iTunes Connect</a> <a href="http://superdanny.link/tags/%E4%B8%8A%E6%9E%B6/" style="font-size: 12px;" class="color3">上架</a> <a href="http://superdanny.link/tags/%E4%BB%A3%E7%A0%81%E5%9D%97/" style="font-size: 12px;" class="color4">代码块</a> <a href="http://superdanny.link/tags/%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%AF%81%E4%B9%A6%E6%89%93%E5%8C%85/" style="font-size: 12px;" class="color3">企业级证书打包</a> <a href="http://superdanny.link/tags/%E5%90%8C%E6%AD%A5/" style="font-size: 12px;" class="color3">同步</a> <a href="http://superdanny.link/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 12px;" class="color5">图片上传</a> <a href="http://superdanny.link/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12px;" class="color3">安装</a> <a href="http://superdanny.link/tags/%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5/" style="font-size: 12px;" class="color5">安装失败</a> <a href="http://superdanny.link/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 12px;" class="color3">工具</a> <a href="http://superdanny.link/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" style="font-size: 12px;" class="color5">年终总结</a> <a href="http://superdanny.link/tags/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/" style="font-size: 12px;" class="color5">开发文档</a> <a href="http://superdanny.link/tags/%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7/" style="font-size: 12px;" class="color1">开发者账号</a> <a href="http://superdanny.link/tags/%E5%BC%80%E5%8F%91%E8%AF%81%E4%B9%A6/" style="font-size: 12px;" class="color5">开发证书</a> <a href="http://superdanny.link/tags/%E6%89%93%E5%8C%85/" style="font-size: 12px;" class="color3">打包</a> <a href="http://superdanny.link/tags/%E6%89%93%E8%B5%8F/" style="font-size: 12px;" class="color3">打赏</a> <a href="http://superdanny.link/tags/%E6%8E%A8%E9%80%81/" style="font-size: 12px;" class="color3">推送</a> <a href="http://superdanny.link/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 12px;" class="color3">插件</a> <a href="http://superdanny.link/tags/%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/" style="font-size: 12px;" class="color5">文件共享</a> <a href="http://superdanny.link/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 12px;" class="color5">文件操作</a> <a href="http://superdanny.link/tags/%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88/" style="font-size: 12px;" class="color5">文件预览</a> <a href="http://superdanny.link/tags/%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/" style="font-size: 12px;" class="color5">真机调试</a> <a href="http://superdanny.link/tags/%E7%AE%80%E5%8E%86/" style="font-size: 12px;" class="color3">简历</a> <a href="http://superdanny.link/tags/%E7%BB%88%E7%AB%AF/" style="font-size: 12px;" class="color3">终端</a> <a href="http://superdanny.link/tags/%E8%8E%B7%E5%8F%96IP/" style="font-size: 12px;" class="color5">获取IP</a> <a href="http://superdanny.link/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/" style="font-size: 12px;" class="color5">解决方式</a> <a href="http://superdanny.link/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 12px;" class="color3">证书</a> <a href="http://superdanny.link/tags/%E8%AF%81%E4%B9%A6%E6%97%A0%E6%95%88/" style="font-size: 12px;" class="color5">证书无效</a> <a href="http://superdanny.link/tags/%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" style="font-size: 12px;" class="color5">调试技巧</a> <a href="http://superdanny.link/tags/%E8%BF%9B%E5%BA%A6%E6%8E%A7%E5%88%B6/" style="font-size: 12px;" class="color5">进度控制</a> <a href="http://superdanny.link/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1%E6%A0%A1%E9%AA%8C/" style="font-size: 12px;" class="color1">银行卡校验</a> <a href="http://superdanny.link/tags/%E9%94%AE%E7%9B%98/" style="font-size: 12px;" class="color3">键盘</a> <a href="http://superdanny.link/tags/%E9%95%BF%E6%8C%89%E6%96%87%E6%9C%AC%E6%A1%86/" style="font-size: 12px;" class="color1">长按文本框</a> <a href="http://superdanny.link/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 12px;" class="color3">面试</a> <a href="http://superdanny.link/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 12px;" class="color3">项目</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://flyweights.wang/">單線程</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.chuancai.site/">川菜的小屋</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://superdannyblog.farbox.com/">皮卡丘</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://georgeyang.cn/">GeorgeYang</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://cococ.qiniudn.com/">3Zero</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">90后-真名吕昌辉-大家都叫我皮卡丘、DD、CTO（其实我都有点惭愧被这么叫）-我有一颗稚(禽)嫩(兽)的心-希望能与IT行业的牛人学习！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">SuperDanny</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://ww1.sinaimg.cn/mw690/81f8a509gw1evdwqs4q4cj20xc0xbjyw.jpg" class="js-avatar show" src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1evdwqs4q4cj20xc0xbjyw.jpg">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">SuperDanny</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一个不知天高地厚的小屁孩</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://superdanny.link/">主页</a></li>
+		        
+					<li><a href="http://superdanny.link/archives">所有文章</a></li>
+		        
+					<li><a href="http://superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF">移动端</a></li>
+		        
+					<li><a href="http://superdanny.link/categories/Mac%E7%AB%AF">Mac端</a></li>
+		        
+					<li><a href="http://superdanny.link/2015/07/21/About-me">简历</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/SuperDannyBoy" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/lovejameslvforever" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://superdanny.link/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:boy736809040@gamil.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-iOS-Certificate-has-an-invalid-issuer" class="article article-type-post article2" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　).html" class="article-date">
+  	<time datetime="2016-02-15T02:13:00.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS开发证书"此证书的签发者无效"解决方法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="color4" href="http://superdanny.link/tags/iOS/" style="font-size: 12px;">iOS</a></li><li class="article-tag-list-item"><a class="color5" href="http://superdanny.link/tags/%E8%AF%81%E4%B9%A6%E6%97%A0%E6%95%88/" style="font-size: 12px;">证书无效</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="color4" href="http://superdanny.link/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 12px;">移动端</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- 文章目录开始 -->
+        
+                      
+            <div id="toc" class="article-toc" style="right: 15px;">
+            <h2>目录</h2>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="http://superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="http://superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/#问题原因"><span class="toc-number">2.</span> <span class="toc-text">问题原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="http://superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/#解决办法"><span class="toc-number">3.</span> <span class="toc-text">解决办法</span></a></li></ol>  
+            </div>
+            <script type="text/javascript">
+              var _article = document.getElementsByClassName('article')[0];
+              setTimeout("_article.className += ' article2'",0);
+              setTimeout("document.getElementById('toc').style.right = '15px'", 0);                
+            </script>
+          
+        
+        <!-- 文章目录结束 -->
+        <h2 id="前言">前言</h2><p>哎，每次过完节都要有一个坑给自己跳。逃不过这个魔爪。<br>这不，一过完春节，回来就发现公司证书出现”此证书的签发者无效”。<br><a href="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100tg3i59j20eg01lq36.jpg" title="证书签发者无效" rel="fancy-group" class="fancy-ctn fancybox"><img src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100tg3i59j20eg01lq36.jpg" title="证书签发者无效"></a></p>
+<a id="more"></a>
+<h2 id="问题原因">问题原因</h2><p>经过一番查找，苹果官方给出了回答。</p>
+<blockquote>
+<p>Thanks for bringing this to the attention of the community and apologies for the issues you’ve been having. This issue stems from having a copy of the expired WWDR Intermediate certificate in both your System and Login keychains. To resolve the issue, you should first download and install the new <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a> (by double-clicking on the file). Next, in the Keychain Access application, select the System keychain. Make sure to select “Show Expired Certificates” in the View menu and then delete the expired version of the Apple Worldwide Developer Relations Certificate Authority Intermediate certificate (expired on February 14, 2016). Your certificates should now appear as valid in Keychain Access and be available to Xcode for submissions to the App Store.</p>
+</blockquote>
+<p>看来是由于苹果系统的安全证书过期问题导致。<br><a href="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100ti4ritj20jx05sgmo.jpg" title="过期的安全证书" rel="fancy-group" class="fancy-ctn fancybox"><img src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100ti4ritj20jx05sgmo.jpg" title="过期的安全证书"></a></p>
+<p>苹果早在一个多月前就提醒开发者使用新证书。开发者如果不及时更新，不仅会影响到自己的开发工作，还有可能对用户造成困扰。这一份通知面向的是那些开发应用与 Apple Wallet、Safari 推送中心又或者是 Safari 插件相关的开发者。苹果还在通知中表示，开发者需要在 2016 年 2 月 14 日结束之前更新他们的安全证书。更新之后，安全证书的下一个失效期为 2023 年 2 月。</p>
+<h2 id="解决办法">解决办法</h2><p>既然知道了原因，那么就可以对症下药了。我们通过下载苹果提供的最新的<a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">安全证书</a>并双击安装。</p>
+<ol>
+<li>然后打开钥匙串，在导航栏上，依次选择<code>显示</code>-<code>显示已过期的证书</code><br> <a href="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100tfcdg9j21740gsjv4.jpg" title="显示已过期的证书" rel="fancy-group" class="fancy-ctn fancybox"><img src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100tfcdg9j21740gsjv4.jpg" title="显示已过期的证书"></a> </li>
+<li>选择<code>登录</code>-<code>所有项目</code></li>
+<li>在搜索栏下输入 apple w</li>
+<li>删除对应过期的安全证书</li>
+</ol>
+<p><a href="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100tau6guj20ud0c476j.jpg" title="流程" rel="fancy-group" class="fancy-ctn fancybox"><img src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/81f8a509gw1f100tau6guj20ud0c476j.jpg" title="流程"></a> </p>
+<hr>
+<p>再一次感谢您花费时间阅读这篇文章！</p>
+<p>微博： <a href="http://weibo.com/2180556041" target="_blank" rel="external">@Danny_吕昌辉</a><br>博客： <a href="http://superdannyblog.farbox.com/" target="_blank" rel="external">SuperDanny</a>  </p>
+
+        <!--版权信息开始-->
+        <!--打赏功能-->
+<!--
+</br>
+<div class="donate">
+
+        <form action="http://SuperDanny.link/2016/06/06/A-reward-Column/" method="GET" target="_blank" accept-charset="GBK">
+            <input name="dd" type="image" value="pay" src="http://ww4.sinaimg.cn/large/81f8a509gw1f0bxwdnr4zj202a028jr7.jpg" style="float:left;margin-left:45%;margin-right:45%;">
+        </form>
+
+<span class="donate_txt" style="float:left;margin-left:51%;margin-right:51%;">
+↑</br>
+</span>
+
+<span class="donate_txt" style="float:left;margin-left:41%;margin-right:30%;">
+赏杯咖啡，持续写作
+</span>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+<hr>
+        </div>
+-->
+<!--协议功能-->
+<div class="copyright">
+  <span class="claim">除非另有声明、本网站采用知识共享「<a href="http://creativecommons.org/licenses/by-nc/3.0/cn/" rel="license">署名-非商业性使用 3.0 中国大陆</a>」许可协议授权。</span>
+  <span class="from-link">
+    <em>本文链接地址:</em>
+    <a href="http://superdanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/index.html">
+      http://SuperDanny.link/2016/02/15/iOS-Certificate-has-an-invalid-issuer/index.html
+    </a>
+  </span>
+</div>
+
+        <!--版权信息结束-->
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="http://superdanny.link/2016/02/20/iOS-Apple-Pay/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Apple Pay 入门（转）
+        
+      </div>
+    </a>
+  
+  
+    <a href="http://superdanny.link/2016/02/04/synchronous/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博文同步</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'superdanny'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+</section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		© 2016 SuperDanny
+        <span>总访问量：</span><span id="busuanzi_value_site_pv">20828</span>
+        <span> | 访客：</span><span id="busuanzi_value_site_uv">9642</span>
+        <span> | 本页阅读：</span><span id="busuanzi_value_page_pv">3601</span>次
+    	</div>
+      	<div class="footer-right">
+      		 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Photos in <a href="http://weibo.com/2180556041/" target="_blank">Sina</a>, Write in markdown
+      	</div>
+    </div>
+
+<!--下面这一段是swiftype搜索代码-->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','NysUHKWRns2yYmWVA4x8','2.0.0');
+</script>
+
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/main.js" type="text/javascript"></script>
+<script async="" src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="./iOS开发证书_此证书的签发者无效_解决方法 _ 皮卡丘♪～(´ε｀　)_files/MathJax.js">
+</script>
+
+
+  </div>
+
+</body></html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPN-3j-rsl">
+                                <rect key="frame" x="303" y="550" width="297" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jFH-mw-gR8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="相机">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="28B-hL-Dp9"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e74-59-w2R">
+                                <rect key="frame" x="0.0" y="20" width="600" height="520"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXm-v2-QDc">
+                                <rect key="frame" x="0.0" y="550" width="298" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2Zi-wO-RK9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="相册">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plN-3K-u33"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qPN-3j-rsl" secondAttribute="bottom" id="3Ov-90-NRG"/>
+                            <constraint firstItem="e74-59-w2R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PDJ-b6-xfx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rXm-v2-QDc" secondAttribute="bottom" id="Vrk-hR-l0Z"/>
+                            <constraint firstAttribute="trailing" secondItem="qPN-3j-rsl" secondAttribute="trailing" id="XCF-VN-KOk"/>
+                            <constraint firstItem="qPN-3j-rsl" firstAttribute="leading" secondItem="rXm-v2-QDc" secondAttribute="trailing" constant="5" id="Ytn-uf-d7N"/>
+                            <constraint firstItem="rXm-v2-QDc" firstAttribute="top" secondItem="e74-59-w2R" secondAttribute="bottom" constant="10" id="ZWO-Ul-3Jz"/>
+                            <constraint firstItem="qPN-3j-rsl" firstAttribute="width" secondItem="rXm-v2-QDc" secondAttribute="width" id="cQg-xR-6Vn"/>
+                            <constraint firstAttribute="trailing" secondItem="e74-59-w2R" secondAttribute="trailing" id="dZx-Db-Umx"/>
+                            <constraint firstItem="e74-59-w2R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nsV-1s-ocj"/>
+                            <constraint firstItem="rXm-v2-QDc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p8d-90-ppN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="e74-59-w2R" id="NjW-MC-yeJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
